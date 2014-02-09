@@ -1,0 +1,7 @@
+exports.run = function (fn) {
+    console.log('process', process.hrtime);
+    var time = process.hrtime();
+    var result = fn();
+    time = process.hrtime(time);
+    print(result + '\n' + time + 'nanoseconds');
+}
